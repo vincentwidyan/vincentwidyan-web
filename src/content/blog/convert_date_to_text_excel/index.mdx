@@ -1,0 +1,57 @@
+---
+title: 'Convert Date to Text in Excel'
+description: 'Sometimes Date data in Excel need to change to Text for several needs. In this blog, I will explain how to convert date to text in Microsoft Excel'
+date: 2024-09-14
+tags: ['excel', 'tips']
+image: './convert_date_to_text_excel.png'
+authors: ['vincentwidyan']
+draft: false
+---
+import InfoBox from '@/components/mdx/InfoBox.astro'
+import Challenge from '@/components/mdx/Challenge.astro'
+import DynamicTable from '@/components/mdx/Challenge2.astro'
+
+When handling datetime data in Excel, sometime we need to convert it to text. One simple example we do that is when we need to concatenate that with other data. In this tutorial, I will explain how to convert date to text in Excel.
+
+## Pre-requisite
+- Use Microsoft Excel, either you can purchase it with license or using free [Microsoft 365 Online](https://www.microsoft.com/en-us/microsoft-365/free-office-online-for-the-web#:~:text=Use%20Microsoft%20365%20apps%20for,the%20web%20(formerly%20Office).)
+
+## Convert Date to Text in Excel
+
+Excel formula that can be used to convert date value to text in Excel is `TEXT` function. This functions allows you to format a date value to a specific text based on format we apply on the function.
+This means, every time your data value changes, the text will also change. To stop the relation, simply copy paste value the text function.
+
+<InfoBox type="warning">
+**Warning:**  Excel recommends to keep original date data in one cell, and then use `TEXT` function in another cell. Then if you still want to use it on other formula, you can refer to the original date data.
+</InfoBox>
+
+### Formula
+Here are the `TEXT` function and its parameters in Excel
+```excel
+= TEXT ( Value , Format Text )
+```
+
+### Parameter(s)
+<DynamicTable icon="value" keyText="Value" value="Cell/Range with date value that will be converted" />
+<DynamicTable icon="category" keyText="Format Text" value="Specific format code from Excel" />
+
+<InfoBox type="inform">
+**Info:**  All format code for Excel can be see [here](/blog/)
+</InfoBox>
+
+
+### Example
+Here some example on how you can use TEXT function to convert date to text in Excel.
+
+- `=TEXT(TODAY()),"mm/dd/yy")` ---> Today date in MM/DD/YY format, like 29/09/2024
+- `=TEXT(TODAY()),"dd-mmm-yyy")` ---> Today date like 14-Sep-2024
+- `=TEXT(NOW()),"H:MM AM/PM")` ---> Current time, like 9:35 AM
+- `=TEXT(NOW()),"HH:MM:YY")` ---> Current time, like 09:35:20
+- `=TEXT(NOW()),"mm/dd H:MM")` ---> Current time, like 03/14 9:35
+- `=TEXT(TODAY()),"dddd, dd mmmm yyyy")` ---> Today date like Sunday, 14 March 2024
+- `=TEXT(1.6345),"[H]:MM:YY")` ---> Time like 39:13:41 that more than 24 hours
+
+<InfoBox type="info">
+**Tips:** Adding brackets before and after format code timelike this `[h]:mm:ss` will enable time format to extend more than 24 hours (e.g. 39:13:41)
+</InfoBox>
+

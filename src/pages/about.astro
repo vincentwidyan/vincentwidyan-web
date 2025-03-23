@@ -6,6 +6,8 @@ import ProjectCard from '@/components/ProjectCard.astro'
 import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
 import { getCollection } from 'astro:content'
+import { ShoppingCart } from 'lucide-react';
+import { Icon } from 'astro-icon/components'
 
 const projects = await getCollection('projects')
 ---
@@ -17,40 +19,225 @@ const projects = await getCollection('projects')
     <section>
       <div class="min-w-full">
         <div class="prose prose-neutral mb-8 dark:prose-invert">
+          <h3>Introduction</h3>
           <p class="mb-4">
-            astro-erudite is an opinionated, no-frills static blogging template
-            that prioritizes simplicity and performance, built with <Link
-              href="https://astro.build"
-              class="text-foreground"
-              external
-              underline>Astro</Link
-            >, <Link
-              href="https://tailwindcss.com"
-              class="text-foreground"
-              external
-              underline>Tailwind</Link
-            >, and <Link
-              href="https://ui.shadcn.com"
-              class="text-foreground"
-              external
-              underline>shadcn/ui</Link
-            >. It provides a clean foundation for your content while being
-            extremely easy to customize.
+            Hi there, my name is Vincent. I am from Indonesia. I worked as Project Controller where I used Excel all the time. I like creating spreadsheet tools to assist me on daily tasks troughout the day.
+            I also like graphic design like logo, poster etc. Then I combined them both. I like creating spreadsheets that are useful and also visually appealing.
           </p>
-          <p>
-            To learn more about the philosophy behind this template, check out
-            the following blog post: <Link
-              href="/blog/the-state-of-static-blogs"
-              class="text-foreground"
-              underline>The State of Static Blogs in 2024</Link
-            >.
+          <p class="">
+            Recently I made <Link
+            href="/gallery/"
+            class="text-foreground"
+            external
+            underline>Goodchart</Link
+          > which is a spreadsheet with sets of predefined chart where you can just change data, and make it yours. You can use it on your presentations, posters, reports etc. The designed was inspired by
+             <Link
+            href="https://ui.shadcn.com"
+            class="text-foreground"
+            external
+            underline>Shadcn UI</Link
+          >.
+          </p>
+          </p>
+          <h3>Gallery</h3>
+          <p class="">
+            These all below are my original dashboards I made using <Link
+            href="https://excel.cloud.microsoft"
+            class="text-foreground"
+            external
+            underline>Microsoft Excel</Link
+          > and <Link
+          href="https://docs.google.com/spreadsheets/create"
+          class="text-foreground"
+          external
+          underline>Google Sheet</Link
+        > 
           </p>
         </div>
 
-        <h2 class="mb-4 text-2xl font-semibold">Example Projects Listing</h2>
-        <div class="flex flex-col gap-4">
-          {projects.map((project) => <ProjectCard project={project} />)}
-        </div>
+
+        
+        <div class="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+          
+      
+        </a>
+          <a 
+          href="https://vincentwidyan.gumroad.com/l/alcgij"
+          class="group relative flex flex-col overflow-hidden rounded-xl border bg-card hover:bg-accent/10 hover:border-secondary/50 transition-all duration-300"
+        >
+          <div class="invisible !h-0">
+      
+      ### Peronsal Budgeting Dashboard
+      
+          </div>
+          <div class="aspect-[4.5/3] overflow-hidden">
+            <div class="absolute top-3 left-3 rounded-full h-6 w-6 flex items-center justify-center z-10">
+              <ShoppingCart className="text-white" size={20}>
+            </div>
+            <img
+              src="../../public/personal_budgeting_dashboard_2.png"
+              alt="Day 0 Map"
+              class="hx-absolute object-auto transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+          <div class="flex flex-col p-4">
+            <h3 class="text-xl font-semibold tracking-tight mb-1" id="day-0">Excel Budgeting Spreadsheet</h3>
+            <p class="text-sm text-muted-foreground">Built in Microsoft Excel to monitor and track personal finance and budget</p>
+            <div class="absolute bottom-4 right-4 opacity-0 transform translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+              <Icon name="lucide:arrow-right" class="h-4 w-4" />
+            </div>
+          </div>
+      
+        </a>
+
+        <!-- Divider for each dashboard -->
+
+        <a 
+          href=""
+          class="group relative flex flex-col overflow-hidden rounded-xl border bg-card hover:bg-accent/10 hover:border-secondary/50 transition-all duration-300"
+        >
+          <div class="invisible !h-0">
+      
+      ### Social Media Monitoring Dashboard
+      
+          </div>
+          <div class="aspect-[4.5/3] overfl ow-hidden">
+            <img
+              src="../../public/social_media_monitoring_2.png"
+              alt="Day 0 Map"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+          <div class="flex flex-col p-4">
+            <h3 class="text-xl font-semibold tracking-tight mb-1" id="day-0">Social Media Monitoring</h3>
+            <p class="text-sm text-muted-foreground">Built in Google Sheet to track real-time performance, engagement across platforms.</p>
+            <div class="absolute bottom-4 right-4 opacity-0 transform translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+              <Icon name="lucide:arrow-right" class="h-4 w-4" />
+            </div>
+          </div>
+      
+        </a>
+      
+        <!-- Divider for each dashboard -->
+
+        <a 
+          href=""
+          class="group relative flex flex-col overflow-hidden rounded-xl border bg-card hover:bg-accent/10 hover:border-secondary/50 transition-all duration-300"
+        >
+          <div class="invisible !h-0">
+      
+      ### Sales Dashboard
+      
+          </div>
+          <div class="aspect-[/3] overfl ow-hidden">
+            <img
+              src="../../public/sales_dashboard_light_2.png"
+              alt="Day 0 Map"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"/>
+          </div>
+          <div class="flex flex-col p-4">
+            <h3 class="text-xl font-semibold tracking-tight mb-1" id="day-0">Sales Performance Dashboard</h3>
+            <p class="text-sm text-muted-foreground">Built in Excel to track sales performance, KPI, and key metrics.</p>
+            <div class="absolute bottom-4 right-4 opacity-0 transform translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+              <Icon name="lucide:arrow-right" class="h-4 w-4" />
+            </div>
+          </div>
+      
+        </a>
+        <!-- Divider for each dashboard -->
+
+        <a 
+          href=""
+          class="group relative flex flex-col overflow-hidden rounded-xl border bg-card hover:bg-accent/10 hover:border-secondary/50 transition-all duration-300"
+        >
+          <div class="invisible !h-0">
+      
+      ### Sales Dashboard
+      
+          </div>
+          <div class="aspect-[4.5/3] overfl ow-hidden">
+            <img
+              src="../../public/sales_dashboard_dark_2.png"
+              alt="Day 0 Map"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"/>
+          </div>
+          <div class="flex flex-col p-4">
+            <h3 class="text-xl font-semibold tracking-tight mb-1" id="day-0">Sales Performance Dashboard</h3>
+            <p class="text-sm text-muted-foreground">Built in Excel to track sales performance, KPI, and key metrics.</p>
+            <div class="absolute bottom-4 right-4 opacity-0 transform translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+              <Icon name="lucide:arrow-right" class="h-4 w-4" />
+            </div>
+          </div>
+      
+        </a>
+
+        <!-- Divider for each dashboard -->
+
+        <a 
+          href="https://vincentwidyan.gumroad.com/l/ntlse"
+          class="group relative flex flex-col overflow-hidden rounded-xl border bg-card hover:bg-accent/10 hover:border-secondary/50 transition-all duration-300"
+        >
+          <div class="invisible !h-0">
+      
+      ### Personal Expense Dashboard
+      
+          </div>
+          <div class="aspect-[4.5/3] overfl ow-hidden">
+            <div class="absolute top-3 left-3 rounded-full h-6 w-6 flex items-center justify-center z-10">
+              <ShoppingCart className="text-white" size={20}>
+            </div>
+            <img
+              src="../../public/personal_expense_dashboard_2.png"
+              alt="Day 0 Map"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"/>
+          </div>
+          <div class="flex flex-col p-4">
+            <h3 class="text-xl font-semibold tracking-tight mb-1" id="day-0">Personal Expense Dashboard</h3>
+            <p class="text-sm text-muted-foreground">Built in Excel to track expenses, bills, investments and debts..</p>
+            <div class="absolute bottom-4 right-4 opacity-0 transform translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+              <Icon name="lucide:arrow-right" class="h-4 w-4" />
+            </div>
+          </div>
+      
+        </a>
+
+        <!-- Divider for each dashboard -->
+
+        <a 
+          href="buymeacoffee.com/vincentwidyan/e/366940"
+          class="group relative flex flex-col overflow-hidden rounded-xl border bg-card hover:bg-accent/10 hover:border-secondary/50 transition-all duration-300"
+        >
+          <div class="invisible !h-0">
+      
+      ### Project Management Dashboard
+      
+          </div>
+          <div class="aspect-[4.5/3] overfl ow-hidden">
+            <div class="absolute top-3 left-3 rounded-full h-6 w-6 flex items-center justify-center z-10">
+              <ShoppingCart className="text-white" size={20}>
+            </div>
+            <img
+              src="../../public/project_management_dashboard.png"
+              alt="Day 0 Map"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"/>
+          </div>
+          <div class="flex flex-col p-4">
+            <h3 class="text-xl font-semibold tracking-tight mb-1" id="day-0">Project Management Dashboard</h3>
+            <p class="text-sm text-muted-foreground">Built in Excel for real-time progress tracking and its key metrics.</p>
+            <div class="absolute bottom-4 right-4 opacity-0 transform translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+              <Icon name="lucide:arrow-right" class="h-4 w-4" />
+            </div>
+          </div>
+      
+        </a>
+      
+        
+
+
+
+      </div>
+
+
       </div>
     </section>
   </Container>

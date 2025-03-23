@@ -71,18 +71,20 @@ const authors = await parseAuthors(post.data.authors ?? [])
     />
     {
       post.data.image && (
+      <div class="col-span-full mx-auto w-full max-w-[800px]">
         <Image
           src={post.data.image}
           alt={post.data.title}
           width={1200}
-          height={630}
-          class="col-span-full mx-auto w-full max-w-[1000px] object-cover"
+          height={800}
+          class="rounded-xl object-cover"
         />
+      </div>
       )
     }
     <section class="col-start-2 flex flex-col gap-y-6 text-center">
       <div class="flex flex-col gap-y-4">
-        <h1 class="text-4xl font-bold leading-tight sm:text-5xl">
+        <h1 class="text-4xl font-bold leading-tight sm:text-4xl">
           {post.data.title}
         </h1>
 
@@ -132,7 +134,7 @@ const authors = await parseAuthors(post.data.authors ?? [])
               post.data.tags.map((tag) => (
                 <a
                   href={`/tags/${tag}`}
-                  class={badgeVariants({ variant: 'secondary' })}
+                  class={badgeVariants({ variant: 'formal' })}
                 >
                   <Icon name="lucide:hash" class="size-3 -translate-x-0.5" />
                   {tag}

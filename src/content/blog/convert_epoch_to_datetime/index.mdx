@@ -1,0 +1,83 @@
+---
+title: 'Convert Epoch to Dateime (vice versa)'
+description: 'In this tutorial, will be explained how to converting Epoch to Datetime and vice verse in Python'
+date: 2024-09-20
+tags: ['python', 'python-basic']
+image: './assets/convert_epoch_to_datetime.webp'
+authors: ['vincentwidyan']
+---
+import InfoBox from '@/components/mdx/InfoBox.astro'
+import Challenge from '@/components/mdx/Challenge.astro'
+import { Icon } from 'astro-icon/components'
+
+Epoch is time representation standard that is used on Unix timestamp which every digit represents every second happens from January 1st, 1970 until today. Epoch time contain 10 digit number and represented every time zone with added 3600 seconds. We will sometime have to work with this Epoch time when we handle data in logs and databases.
+
+## Pre-requisite
+1. Make sure you have python language installed on your machine. Tutorial can be followed [here](https://www.codepolitan.com/blog/cara-install-python-di-windows-macos-dan-linux-lengkap/)
+2. Make sure python command is included on machine `PATH`
+
+
+## Steps
+### 1. Import Datetime Library
+Firstly we need to import `datetime` library so we can use datetime class and its functions.
+
+```python showLineNumbers{1} {1} title="tutorial.py"
+# TODO : Import datetime library
+from datetime import datetime
+```
+
+### 2. Convert Epoch to Datetime
+If we have Epoch standard time (10 digits number), we can use `fromtimestamp()` to convert to python standard `datetime`. Code below is converting Epoch time from a variable called `currentTime`.
+
+```python title="tutorial.py" showLineNumbers{4} {3}
+# TODO : Convert Epoch to Datetime
+epochTime = 1676106378
+currentTime = datetime.fromtimestamp(epochTime)
+print('1. Current Epoch to Datetime : ',currentTime)
+```
+<details>
+  <summary class="cursor-pointer mb-4"><b>Result</b></summary>
+```text
+1. Current Epoch to Datetime : 2023-02-11 09:06:18
+```
+</details>
+
+### 3. Convert Datetime to Epoch
+If we have `datetime` data in python and we want to convert it to Epoch, we can use `timestamp()`. Code below converting today's date to Epoch using `timestamp()` function.
+
+```python title="tutorial.py" showLineNumbers{9} {3}
+# TODO : Convert Datetime to Epoch
+todaydate = datetime.today()
+epoch_convert = todaydate.timestamp()
+print('2. Current Full Epoch Timestamp : ',epoch_convert)
+print('3. Current Only Date Epoch Timestamp : ',str(epoch_convert)[0:10])
+```
+
+<details>
+  <summary class="cursor-pointer mb-4"><b>Result</b></summary>
+```text
+2. Current Full Epoch Timestamp : 1676365612.225573
+3. Current Only Date Epoch Timestamp : 1676365612
+```
+</details>
+
+
+
+## Code
+Below are overall code on this tutorial.
+
+```python showLineNumbers, title="tutorial.py"
+# TODO : Import datetime library
+from datetime import datetime
+
+# TODO : Convert Epoch to Datetime
+epochTime = 1676106378
+currentTime = datetime.fromtimestamp(epochTime)
+print('1. Current Epoch to Datetime : ',currentTime
+
+# TODO : Convert Datetime to Epoch
+todaydate = datetime.today()
+epoch_convert = todaydate.timestamp()
+print('2. Current Full Epoch Timestamp : ',epoch_convert)
+print('3. Current Only Date Epoch Timestamp : ',str(epoch_convert)[0:10])
+```

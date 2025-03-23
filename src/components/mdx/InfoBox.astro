@@ -1,0 +1,54 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  type?: 'default' | 'info' | 'warning' | 'flag' | 'inform' | 'destructive'
+}
+
+const { type = 'default' } = Astro.props
+
+const typeMapping = {
+  default: {
+    icon: 'lucide:lightbulb',
+    classes: 'bg-primary/20',
+    iconClasses: 'translate-y-2 blue-800/50',
+  },
+  info: {
+    icon: 'lucide:info',
+    classes: 'bg-secondary/50',
+    iconClasses: 'translate-y-2 blue-800/50',
+  },
+  warning: {
+    icon: 'lucide:alert-triangle',
+    classes:
+      'border-yellow-800/50 bg-yellow-400/20',
+      iconClasses: 'translate-y-2 blue-800/50',
+  },
+  flag: {
+    icon: 'lucide:flag',
+    classes: 'bg-primary/20 justify-center',
+    iconClasses: 'translate-y-2 bg-blue-800/50',
+  },
+  inform: {
+    icon: 'lucide:info',
+    classes: 'border-blue-800/50 bg-blue-300/20 dark:border-blue-400/50',
+    iconClasses: 'translate-y-2 blue-800/50',
+  },
+  destructive: {
+    icon: 'lucide:alert-octagon',
+    classes: 'border-destructive bg-destructive/25',
+    iconClasses: 'translate-y-2 blue-800/50',
+  },
+}
+
+const { icon, classes, iconClasses } = typeMapping[type]
+---
+
+<div class={`relative my-6 flex gap-4 rounded-xl border p-4 ${classes}`}>
+  <span class="text-md pointer-events-none select-none">
+    <Icon name={icon} size={20} class={iconClasses} />
+  </span>
+  <div class="-my-4 prose-code:break-all">
+    <slot />
+  </div>
+</div>

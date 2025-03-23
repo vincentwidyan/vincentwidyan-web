@@ -32,7 +32,7 @@ const tags = [...tagCounts.keys()].sort((a, b) => {
           tags.map((tag) => (
             <Link
               href={`/tags/${tag}`}
-              class={badgeVariants({ variant: 'secondary' })}
+              class={badgeVariants({ variant: 'formal' })}
             >
               <Icon name="lucide:hash" class="size-3 -translate-x-0.5" />
               {tag}

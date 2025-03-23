@@ -10,6 +10,11 @@
   font-display: swap;
 }
 
+/* src/styles/global.css */
+
+
+
+
 @font-face {
   font-family: 'Geist Mono';
   src: url('/fonts/GeistMonoVF.woff2') format('woff2');
@@ -17,6 +22,8 @@
   font-style: normal;
   font-display: swap;
 }
+
+
 
 @layer base {
   :root {
@@ -189,3 +196,11 @@
     }
   }
 }
+
+/* src/styles/global.css */
+
+img {
+  border-radius: 5px; /* Adjust to desired value */
+}
+
+

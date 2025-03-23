@@ -3,9 +3,14 @@ title: 'The State of Static Blogs in 2024'
 description: 'There should not be a single reason why you would need a command palette search bar to find a blog post on your own site.'
 date: 2024-07-25
 tags: ['webdev', 'opinion']
-image: './1200x630.png'
-authors: ['enscribe']
+image: './frame4.png'
+authors: ['vincentwidyan']
+draft: true
 ---
+import InfoBox from '@/components/mdx/InfoBox.astro'
+import Challenge from '@/components/mdx/Challenge.astro'
+import { Icon } from 'astro-icon/components'
+import Day0 from 'assets/frame4.png'
 
 ## Introduction
 
@@ -15,7 +20,96 @@ I have a lot of opinions about what makes a great blogging template. As a cumula
 
 astro-erudite is written in Astro, a framework hyperoptimized for static content such as blogs. Aesthetically, it is also designed to be as boring as possible while still maintaining maximum functionality, as to allow for the freedom of the developer (or the designer they hire) to make their blog uniquely their own. Within the codebase of this template I've included many nuances that, in my opinion (and there will be many, many opinions here), make the developer experience significantly more pleasant. I've also _excluded_ many features that, frankly, you don't need.
 
+<div class="not-prose grid grid-cols-1 sm:grid-cols-2 gap-6 my-8">
+  <a 
+    href="/blog/japan-retrospective/day-0"
+    class="group relative flex flex-col overflow-hidden rounded-xl border bg-card hover:bg-accent/10 hover:border-primary/50 transition-all duration-300"
+  >
+    <div class="invisible !h-0">
+
+### Day 0: Kansai Airport
+
+    </div>
+    <div class="aspect-[4/3] overflow-hidden">
+      <img
+        src={Day0.src}
+        alt="Day 0 Map"
+        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+      />
+    </div>
+    <div class="flex flex-col p-4">
+      <h3 class="text-xl font-semibold tracking-tight mb-1" id="day-0">Day 0</h3>
+      <p class="text-sm text-muted-foreground">Kansai Airport</p>
+      <div class="absolute bottom-4 right-4 opacity-0 transform translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+        <Icon name="lucide:arrow-right" class="h-4 w-4" />
+      </div>
+    </div>
+
+  </a>
+  </div>
+
 ## Welcoming some DX features
+
+<Challenge
+  solvers={[
+    {
+      name: 'flocto',
+      href: 'https://github.com/flocto',
+      avatar: 'https://github.com/flocto.png',
+    },
+    {
+      name: 'enscribe',
+      href: 'https://github.com/jktrn',
+      avatar: 'https://github.com/jktrn.png',
+    },
+  ]}
+  authors={["0xmmalik"]}
+  category="PPC"
+  points={9}
+>
+  I've just had the most brilliant idea 😮 I want to write a program that takes all the students and how much they like each other to pair them up so I can maximize the total love in the classroom! Of course, when I say "I," I really mean... "you" 😉  
+  Notes: **[SEE BELOW]**  
+  `nc 0.cloud.chals.io [PORT]`
+</Challenge>
+
+<InfoBox type="inform">
+**Informational**: Discrete math, graph theory, and combinatorial optimization ahead! If you're unfamiliar with the mathematical symbols used in this writeup, reference this dropdown:
+</InfoBox>
+
+<div class="mx-auto my-auto flex flex-col gap-y-8 rounded-xl border p-4">
+<details>
+  <summary class="cursor-pointer mb-4"><b>[v1.0] Complicated Math Symbols</b></summary>
+
+-   $$\sum$$ - Summation
+-   $$\in$$ - Element of
+-   $$\notin$$ - Not an element of
+
+</details>
+</div>
+
+<details>
+  <summary class="cursor-pointer mb-4"><b>Complicated Math Symbols</b></summary>
+
+-   $$\sum$$ - Summation
+-   $$\in$$ - Element of
+-   $$\notin$$ - Not an element of
+-   $$\subset$$ - Proper subset of
+-   $$\subseteq$$ - Subset of
+-   $$\emptyset$$ - Empty set
+-   $$\forall$$ - For all
+-   $$\exists$$ - There exists
+-   $$\nexists$$ - There does not exist
+-   $$\in$$ - Element of
+-   $$\notin$$ - Not an element of
+-   $$\ni$$ - Contains as member
+-   $$\not\ni$$ - Does not contain as member
+-   $$\setminus$$ - Set minus (drop)
+-   $$\oplus$$ - Direct sum
+-   $$\cup$$ - Union
+-   $$\cap$$ - Intersection
+-   $$x'$$ - Prime
+
+</details>
 
 This is a non-exhaustive list of features I believe are essential for a frictionless developer experience:
 

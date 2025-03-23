@@ -1,0 +1,45 @@
+---
+import { Users, PenTool, Tag, Star, CheckCircle, FileText, SquarePlus, Sigma} from 'lucide-react'
+
+interface DynamicTableProps {
+  icon: string
+  keyText: string
+  value: string | number | string[] | undefined
+}
+
+// Dynamically map the icon names to their respective SVG components
+const iconMap = {
+  solvers: Users,
+  authors: PenTool,
+  category: Tag,
+  points: Star,
+  solves: CheckCircle,
+  files: FileText,
+  value: Sigma
+}
+
+const { icon, keyText, value } = Astro.props as DynamicTableProps
+
+// Get the correct icon component or null if not found
+const IconComponent = iconMap[icon] || null
+---
+
+<div class="mx-auto my-auto flex flex-col gap-y-8 rounded-xl border p-4 mb-2">
+  <div class="not-prose flex flex-col divide-y my-auto">
+    <div class="flex items-center gap-x-2 py-2 first:pt-0 last:pb-0 my-auto">
+      <div class="flex items-center gap-x-2 text-xs font-medium text-muted-foreground my-auto">
+        {IconComponent && <IconComponent className="size-4" />} {/* Render the icon if available */}
+        <span class="text-xs font-medium items-center text-secondary-foreground">{keyText}</span> {/* Display the key */}
+        <a>:</a>
+      </div>
+      <div class="flex-1 text-xs items-center  text-muted-foreground ">
+        {Array.isArray(value)
+          ? value.join(', ')  // If value is an array, join it with commas
+          : value}
+      </div>
+    </div>
+  </div>
+  <div class="-my-4">
+    <slot />
+  </div>
+</div>

@@ -1,0 +1,159 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import Container from '@/components/Container.astro'
+import Link from '@/components/Link.astro'
+import ProjectCard from '@/components/ProjectCard.astro'
+import { SITE } from '@/consts'
+import Layout from '@/layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import { Icon } from 'astro-icon/components'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
+import { buttonVariants } from '@/components/ui/button'
+import TableOfContents from '@/components/TableOfContents.astro'
+import { ShoppingCart } from 'lucide-react';
+import { type CollectionEntry, render } from 'astro:content'
+import DynamicTable from '@/components/mdx/Challenge2.astro'
+
+
+
+
+---
+
+<Layout title="Gallery" description={SITE.DESCRIPTION}>
+  <Container class="flex flex-col gap-y-6">
+    <Breadcrumbs items={[{ label: 'Gallery', icon: 'lucide:images' }]} />
+  
+
+    <section>
+      
+      <div class="min-w-full">
+        
+        <div class="prose prose-neutral mb-2 dark:prose-invert">
+          
+          <h3>What is Goodchart?</h3>
+          
+          <p class="">
+            Goodchart is an open source chart library built in <Link
+            href="https://excel.cloud.microsoft"
+            class="text-foreground"
+            external
+            underline>Microsoft Excel</Link
+          >. Established first time in 2025 by the creator <Link
+            href="https://vincentwidyan-linkinbio.vercel.app"
+            class="text-foreground"
+            external
+            underline>vincentwidyan</Link
+          > and keeps improving and addign its components. 
+          </p>
+          <p>
+            By open source means, all of its components is free for personal and organizational purposes. But limited for any commercial purposes.
+          </p>
+          <Link
+            href='./blog'
+            aria-label='twitter'
+            title='lucide:twitter'
+            class={buttonVariants({ variant: 'default', size: 'default' })}
+            external
+          > Download Now →
+        </div>
+          
+        
+
+
+        <div class="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+          
+      
+        </a>
+          <a 
+          href="https://vincentwidyan.gumroad.com/l/xmbjjj"
+          class="group relative flex flex-col overflow-hidden rounded-xl border bg-card hover:bg-accent/10 hover:border-secondary/50 transition-all duration-300"
+        >
+          <div class="invisible !h-0">
+      
+      ### Area Charts
+      
+          </div>
+          <div class="aspect-[5/3] overflow-hidden">
+            <img
+              src="../../public/area_chart.png"
+              alt="Day 0 Map"
+              class="hx-absolute object-auto items-center transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+          <div class="flex flex-col p-4">
+            <h3 class="text-xl font-semibold tracking-tight mb-1" id="day-0">Area Charts</h3>
+            <p class="text-sm text-muted-foreground">Published on Goodchart</p>
+            <div class="absolute bottom-4 right-4 opacity-0 transform translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+              <Icon name="lucide:arrow-right" class="h-4 w-4" />
+            </div>
+          </div>
+      
+        </a>
+
+        <!-- Divider for each dashboard -->
+
+        <a 
+          href="https://vincentwidyan.gumroad.com/l/xmbjj"
+          class="group relative flex flex-col overflow-hidden rounded-xl border bg-card hover:bg-accent/10 hover:border-secondary/50 transition-all duration-300"
+        >
+          <div class="invisible !h-0">
+      
+      ### Bar Charts
+      
+          </div>
+          <div class="aspect-[5/3] overflow-hidden">
+            <img
+              src="../../public/bar_chart.png"
+              alt="Day 0 Map"
+              class="hx-absolute object-auto item-center transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+          <div class="flex flex-col p-4">
+            <h3 class="text-xl font-semibold tracking-tight mb-1" id="day-0">Bar Charts</h3>
+            <p class="text-sm text-muted-foreground">Published on Goodchart</p>
+            <div class="absolute bottom-4 right-4 opacity-0 transform translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+              <Icon name="lucide:arrow-right" class="h-4 w-4" />
+            </div>
+          </div>
+      
+        </a>
+      
+        <!-- Divider for each dashboard -->
+
+        <a 
+          href="https://vincentwidyan.gumroad.com/l/xmbjj"
+          class="group relative flex flex-col overflow-hidden rounded-xl border bg-card hover:bg-accent/10 hover:border-secondary/50 transition-all duration-300"
+        >
+          <div class="invisible !h-0">
+      
+      ### Score Cards
+      
+          </div>
+          <div class="aspect-[5/3] overflow-hidden">
+            <img
+              src="../../public/score_card.png"
+              alt="Day 0 Map"
+              class="hx-absolute object-auto item-center transition-transform duration-300 group-hover:scale-105"/>
+          </div>
+          <div class="flex flex-col p-4">
+            <h3 class="text-xl font-semibold tracking-tight mb-1" id="day-0">Score Cards</h3>
+            <p class="text-sm text-muted-foreground">Published on Goodchart</p>
+            <div class="absolute bottom-4 right-4 opacity-0 transform translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+              <Icon name="lucide:arrow-right" class="h-4 w-4" />
+            </div>
+          </div>
+      
+        </a>
+      </div>
+
+     
+      
+    </section>
+  </Container>
+</Layout>

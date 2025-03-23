@@ -3,6 +3,7 @@ import BlogCard from '@/components/BlogCard.astro'
 import Container from '@/components/Container.astro'
 import Link from '@/components/Link.astro'
 import { buttonVariants } from '@/components/ui/button'
+import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
@@ -13,6 +14,8 @@ import {
 import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
 import { getCollection } from 'astro:content'
+import { Icon } from 'astro-icon/components'
+import myImage from '../../public/frame83.png';
 
 const blog = (await getCollection('blog'))
   .filter((post) => !post.data.draft)
@@ -22,56 +25,72 @@ const blog = (await getCollection('blog'))
 
 <Layout title="Home" description={SITE.DESCRIPTION}>
   <Container class="flex flex-col gap-y-6">
+    <div class="not-prose grid grid-cols-1 sm:grid-cols-2 gap-4 my-0">
     <section>
       <Card>
         <CardHeader>
-          <CardTitle className="text-3xl">er·u·dite</CardTitle>
-          <CardDescription
-            >/ˈer(y)əˌdīt/ &bull; <span class="font-semibold">adjective</span
-            ></CardDescription
-          >
+          <CardTitle className="text-2xl">Hi there 👋 Vincent here!</CardTitle>
+          <CardDescription>
+            I am an &bull; <span class="font-semibold"> Excel Visualization Specialist</span>
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <p class="mb-2 text-sm text-muted-foreground">
-            astro-erudite is an opinionated, no-frills static blogging template
-            built with <Link
-              href="https://astro.build"
-              class="text-foreground"
-              external
-              underline>Astro</Link
-            >, <Link
-              href="https://tailwindcss.com"
-              class="text-foreground"
-              external
-              underline>Tailwind</Link
-            >, and <Link
-              href="https://ui.shadcn.com"
-              class="text-foreground"
-              external
-              underline>shadcn/ui</Link
-            >. Extraordinarily loosely based on the <Link
-              href="https://astro-micro.vercel.app/"
-              class="text-foreground"
-              external
-              underline>Astro Micro</Link
-            > theme.
+            I love creating  <Link
+            href="/about/"
+            class="text-foreground"
+            underline>beautifully designed</Link
+          >  spreadsheets that are useful for daily needs. So I made open source chart libary in Excel which is called <Link href="/gallery/" class="text-foreground" underline internal>Goodchart</Link>.
           </p>
-          <p class="text-sm text-muted-foreground">
-            To use this template, check out the <Link
-              href="https://github.com/jktrn/astro-erudite"
-              class="text-foreground"
-              underline
-              external>GitHub</Link
-            > repository. To learn more about why this template exists, read this
-            blog post: <Link
-              href="/blog/the-state-of-static-blogs"
-              class="text-foreground"
-              underline>The State of Static Blogs in 2024</Link
-            >.
+          <p class="mb-4 text-sm text-muted-foreground">
+            It is free and you can use it for every purposes like for PPT, poster, report. I always improve and add more chart along the way, so please follows for more improvement!
           </p>
+
+  
+          <Link
+            href='./blog'
+            aria-label='twitter'
+            title='lucide:twitter'
+            class={buttonVariants({ variant: 'outline', size: 'icon' })}
+            external
+          >
+          <Icon name='lucide:instagram' class="size-4" />
+  
         </CardContent>
       </Card>
     </section>
+
+    <a 
+    href="https://vincentwidyan.gumroad.com/l/xmbjj"
+    class="group relative flex flex-col overflow-hidden rounded-xl border bg-card hover:bg-accent/10 hover:border-secondary/50 transition-all duration-300"
+  >
+    <div class="invisible !h-0">
+
+### Goodchart
+
+    </div>
+    <div class="aspect-[4/3] overfl ow-hidden">
+      <img
+        src={myImage.src}
+        alt="Day 0 Map"
+        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+      />
+    </div>
+    <div class="flex flex-col p-4">
+      <h3 class="text-xl font-semibold tracking-tight mb-1" id="day-0">Goodchart</h3>
+      <p class="text-sm text-muted-foreground">Open Source Chart Library in Excel!</p>
+      <div class="absolute bottom-4 right-4 opacity-0 transform translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+        <Icon name="lucide:arrow-right" class="h-4 w-4" />
+      </div>
+    </div>
+
+  </a>
+
+  </div>
+
+    
+    
+
     <section class="flex flex-col gap-y-4">
       <h2 class="text-2xl font-bold">Latest posts</h2>
       <ul class="not-prose flex flex-col gap-y-4">
@@ -97,3 +116,5 @@ const blog = (await getCollection('blog'))
     </section>
   </Container>
 </Layout>
+
+
