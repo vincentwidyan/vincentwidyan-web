@@ -4,7 +4,7 @@ import Head from '@/components/Head.astro'
 import Header from '@/components/Header.astro'
 import { SITE } from '@/consts'
 import { defineConfig } from 'astro/config';
-
+import Analytics from '@vercel/analytics/astro'
 
 
 type Props = {
@@ -35,6 +35,7 @@ const { title, description, image } = Astro.props
         <slot />
       </main>
       <Footer />
+      <Analytics/>
     </div>
   </body>
 </html>
