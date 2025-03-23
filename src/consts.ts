@@ -15,11 +15,11 @@ export type Link = {
 export const SITE: Site = {
   TITLE: 'vincentwidyan',
   DESCRIPTION:
-    'astro-erudite is a opinionated, no-frills blogging template—built with Astro, Tailwind, and shadcn/ui.',
+    'vincentwidyan personal notes, website and digital garden.',
   EMAIL: 'vincentwidyan@gmail.com',
   NUM_POSTS_ON_HOMEPAGE: 5,
   POSTS_PER_PAGE: 10,
-  SITEURL: 'https://astro-erudite.vercel.app',
+  SITEURL: 'https://vincentwidyan.vercel.app',
 }
 
 export const NAV_LINKS: Link[] = [

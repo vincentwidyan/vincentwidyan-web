@@ -20,7 +20,9 @@ import { ShoppingCart } from 'lucide-react';
 import { type CollectionEntry, render } from 'astro:content'
 import DynamicTable from '@/components/mdx/Challenge2.astro'
 
-
+import image1 from '../../assets/img/area_chart.png';
+import image2 from "../../assets/img/bar_chart.png";
+import image3 from "../../assets/img/score_card.png";
 
 
 ---
@@ -81,8 +83,8 @@ import DynamicTable from '@/components/mdx/Challenge2.astro'
           </div>
           <div class="aspect-[5/3] overflow-hidden">
             <img
-              src="../../public/area_chart.png"
-              alt="Day 0 Map"
+              src={image1.src}
+              alt="Area Charts built in Excel"
               class="hx-absolute object-auto items-center transition-transform duration-300 group-hover:scale-105"
             />
           </div>
@@ -109,8 +111,8 @@ import DynamicTable from '@/components/mdx/Challenge2.astro'
           </div>
           <div class="aspect-[5/3] overflow-hidden">
             <img
-              src="../../public/bar_chart.png"
-              alt="Day 0 Map"
+              src={image2.src}
+              alt="Bar Chart built in Excel"
               class="hx-absolute object-auto item-center transition-transform duration-300 group-hover:scale-105"
             />
           </div>
@@ -137,8 +139,8 @@ import DynamicTable from '@/components/mdx/Challenge2.astro'
           </div>
           <div class="aspect-[5/3] overflow-hidden">
             <img
-              src="../../public/score_card.png"
-              alt="Day 0 Map"
+              src={image3.src}
+              alt="Score Cards built in Excel"
               class="hx-absolute object-auto item-center transition-transform duration-300 group-hover:scale-105"/>
           </div>
           <div class="flex flex-col p-4">
