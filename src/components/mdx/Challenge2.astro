@@ -1,14 +1,9 @@
 ---
-import { Users, PenTool, Tag, Star, CheckCircle, FileText, SquarePlus, Sigma} from 'lucide-react'
+import { Users, PenTool, Tag, Star, CheckCircle, FileText, Sigma } from 'lucide-react'
 
-interface DynamicTableProps {
-  icon: string
-  keyText: string
-  value: string | number | string[] | undefined
-}
-
-// Dynamically map the icon names to their respective SVG components
-const iconMap = {
+// Explicitly typing the keys of iconMap as the names of the icons (which are strings)
+// and their corresponding values as React components.
+const iconMap: Record<'solvers' | 'authors' | 'category' | 'points' | 'solves' | 'files' | 'value', React.ComponentType<any>> = {
   solvers: Users,
   authors: PenTool,
   category: Tag,
@@ -16,6 +11,12 @@ const iconMap = {
   solves: CheckCircle,
   files: FileText,
   value: Sigma
+}
+
+interface DynamicTableProps {
+  icon: keyof typeof iconMap;  // `icon` must be one of the keys from iconMap
+  keyText: string;
+  value: string | number | string[] | undefined;
 }
 
 const { icon, keyText, value } = Astro.props as DynamicTableProps
@@ -43,3 +44,4 @@ const IconComponent = iconMap[icon] || null
     <slot />
   </div>
 </div>
+
